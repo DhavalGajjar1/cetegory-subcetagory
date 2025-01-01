@@ -1,0 +1,40 @@
+<%- include('../partials/header') %>
+<h1>Manage Products</h1>
+<form action="/admin/products" method="POST">
+  <label>Name</label>
+  <input type="text" name="name" required>
+  <label>Description</label>
+  <input type="text" name="description">
+  <label>Price</label>
+  <input type="number" name="price" required>
+  <label>Stock</label>
+  <input type="number" name="stock" required>
+  <button type="submit">Add Product</button>
+</form>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Stock</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% products.forEach(product => { %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.description %></td>
+        <td><%= product.price %></td>
+        <td><%= product.stock %></td>
+        <td>
+          <form action="/admin/products/<%= product._id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete</button>
+          </form>
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
+<%- include('../partials/footer') %>

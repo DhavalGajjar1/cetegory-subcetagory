@@ -1,0 +1,28 @@
+<%- include('../partials/header') %>
+<h1>Your Cart</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% cart.forEach(item => { %>
+      <tr>
+        <td><%= item.productId.name %></td>
+        <td><%= item.quantity %></td>
+        <td><%= item.productId.price * item.quantity %></td>
+        <td>
+          <form action="/user/cart" method="POST">
+            <input type="hidden" name="productId" value="<%= item.productId._id %>">
+            <button type="submit">Remove</button>
+          </form>
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
+<%- include('../partials/footer') %>

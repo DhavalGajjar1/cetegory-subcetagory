@@ -1,0 +1,29 @@
+<%- include('../partials/header') %>
+<h1>Products</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% products.forEach(product => { %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.description %></td>
+        <td><%= product.price %></td>
+        <td>
+          <form action="/user/cart" method="POST">
+            <input type="hidden" name="productId" value="<%= product._id %>">
+            <input type="number" name="quantity" min="1" value="1" required>
+            <button type="submit">Add to Cart</button>
+          </form>
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
+<%- include('../partials/footer') %>
