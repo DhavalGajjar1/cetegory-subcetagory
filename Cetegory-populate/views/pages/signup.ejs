@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Matrix Admin Lite Free Version - Login page" />
+    <title>Login - Matrix Admin Lite</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png" />
+    <!-- Custom CSS -->
+    <link href="/css/style.min.css" rel="stylesheet" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: url('https://images.unsplash.com/photo-1497294815431-9365093b7331?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+        background-size: cover;
+        color: #ffffff;
+        height: 100vh;
+      }
+
+      .main-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding: 20px;
+      }
+
+      .auth-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        height: 100%;
+      }
+
+      .auth-box {
+        background: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+        backdrop-filter: blur(10px);
+        border-radius: 12px;
+        padding: 40px;
+        max-width: 500px;
+        width: 100%;
+        text-align: center;
+      }
+
+      .auth-box .text-center img {
+        max-width: 120px;
+        margin-bottom: 20px;
+      }
+
+      .input-group {
+        margin-bottom: 20px;
+      }
+
+
+
+      .input-group .form-control {
+        border: 1px solid #ffffff;
+        border-radius: 8px;
+        padding: 12px;
+        font-size: 16px;
+        background:transparent;
+        color: #ffffff;
+      }
+
+      .btn-info {
+        background-color: #007bff;
+        border-color: #0056b3;
+        color: white;
+        padding: 12px 20px;
+        font-size: 16px;
+        border-radius: 8px;
+        width: 100%;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn-info:hover {
+        background-color: #0056b3;
+      }
+
+      .card-footer p {
+        color: #f1f1f1;
+      }
+
+      .card-footer p a {
+        color: #007bff;
+        font-weight: bold;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .card-footer p a:hover {
+        color: #0056b3;
+      }
+
+      .preloader {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="main-wrapper">
+      <div class="auth-wrapper">
+        <div class="auth-box">
+          <div>
+            <div class="text-center pt-3 pb-3">
+              <span class="db">
+                <img src="/images/logo.png" alt="logo" />
+              </span>
+            </div>
+            <!-- signup  Form -->
+            <form class="form" action="/user/create" method="post">
+              <div class="row pb-4">
+                <div class="col-12">
+                  <!-- Username -->
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">
+                        <i class="mdi mdi-account fs-4"></i>
+                      </span>
+                    </div>
+                    <input
+                      type="text"
+                      class="form-control form-control-lg"
+                      placeholder="Username"
+                      aria-label="Username"
+                      aria-describedby="basic-addon1"
+                      name="username"
+                      required
+                    />
+                  </div>
+
+                  <!-- Email -->
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">
+                        <i class="mdi mdi-email fs-4"></i>
+                      </span>
+                    </div>
+                    <input
+                      type="text"
+                      class="form-control form-control-lg"
+                      placeholder="Email Address"
+                      aria-label="Email Address"
+                      aria-describedby="basic-addon1"
+                      name="email"
+                      required
+                    />
+                  </div>
+
+                  <!-- Phone -->
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">
+                        <i class="mdi mdi-cellphone-settings fs-4"></i>
+                      </span>
+                    </div>
+                    <input
+                      type="number"
+                      class="form-control form-control-lg"
+                      placeholder="Phone Number"
+                      aria-label="Email Address"
+                      aria-describedby="basic-addon1"
+                      name="phone"
+                      required
+                    />
+                  </div>
+                  <!-- Password -->
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon2">
+                        <i class="mdi mdi-lock fs-4"></i>
+                      </span>
+                    </div>
+                    <input
+                      type="password"
+                      class="form-control form-control-lg"
+                      placeholder="Password"
+                      aria-label="Password"
+                      aria-describedby="basic-addon1"
+                      name="password"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="row border-top border-secondary">
+                <div class="col-12">
+                  <div class="form-group">
+                    <div class="pt-3 d-grid">
+                      <button class="btn btn-block btn-lg btn-info" type="submit">Sign Up</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- Footer -->
+          <div class="card-footer text-center pt-0 px-lg-2 px-1">
+            <p class="mb-2 text-sm mx-auto">
+              Don't have an account?
+              <a href="/user/signin" class=" text-gradient font-weight-bold">Sign In</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="lds-ripple">
+        <div class="lds-pos"></div>
+        <div class="lds-pos"></div>
+      </div>
+    </div>
+
+    <!-- All Required js -->
+    <script src="/libs/jquery/dist/jquery.min.js"></script>
+    <script src="/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      $(".preloader").fadeOut();
+    </script>
+  </body>
+</html>
